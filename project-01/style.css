@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(231, 229, 229);
+    padding: 10px;
+}
+
+.card{
+    width: 180px;
+    background-color: white;
+    padding: 5px 5px 20px 5px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px rgb(212, 209, 209);
+}   
+
+.Image-box{
+    width: 100%;
+    height: 170px;
+    border-radius: 20px;
+}
+.img1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   object-position: calc(21% - 0px) calc(21% - 20px);
+   border-radius: 20px;
+}
+.info{
+    margin-left: 12px;
+}
+.heading{
+    margin-top: 13px;
+}
+
+h2{
+    font-size: 13px;
+    font-family: Roboto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+span{
+    color: green;
+    vertical-align: middle;
+}
+
+.p1{
+    font-size: 11px;
+    color: gray;
+    font-family: Roboto;
+    word-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50px 50px 1fr;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.icon3{
+    font-size: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.p2{
+   font-size: 10px;
+   display: inline-block;
+   vertical-align: middle;
+}
+.icon4{
+    font-size: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.p3{
+    font-size: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.follow-btn{
+    font-size: 9px;
+    width: 60px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+}
