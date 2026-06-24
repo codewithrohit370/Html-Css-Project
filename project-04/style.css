@@ -71,3 +71,30 @@ padding: 13px 20px;
 border-radius: 10px;
 cursor: pointer;
 }
+
+@media (max-width: 576px) {
+ .section-2{
+    display: none;
+ }
+ .section-2 img{
+    width: 50px;
+ }
+ .section-3{
+    gap: 20px;
+ }
+ .Nav-bar{
+    gap: 40px;
+    padding: 5px 5px 5px 5px;
+    justify-content: space-between;
+ }
+
+ .get{
+    padding: 8px 15px;
+ }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .Nav-bar{
+          gap: 30px;
+    }
+}
