@@ -1,0 +1,19 @@
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .nav-bar {
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .nav-bar {
+        padding: 10px 30px;
+    }
+
+    .nav-bar select {
+        padding: 4px 15px;
+    }
+
+    .sign-btn{
+        padding: 4px 8px 4px 8px ;
+    }
+}
