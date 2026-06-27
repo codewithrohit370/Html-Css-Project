@@ -1,19 +1,21 @@
-@media screen and (min-width: 481px) and (max-width: 1024px) {
+/* NavBar Responsive */
+
+@media screen and (min-width: 200px) and (max-width: 950px) {
     .nav-bar {
-        padding: 10px 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 60px;
     }
+    
+
+    .logo-section {
+        width: 90px;
+    }
+    
 }
-
-@media screen and (max-width: 370px) {
-    .nav-bar {
-        padding: 10px 30px;
+@media screen and (max-width: 600px) {
+    .nav-bar select{
+        padding: 6px 14px 6px 14px;
     }
-
-    .nav-bar select {
-        padding: 4px 15px;
-    }
-
-    .sign-btn{
-        padding: 4px 8px 4px 8px ;
-    }
+    
 }
