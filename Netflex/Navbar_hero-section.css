@@ -9,13 +9,18 @@
     background-image: url(backgroond.jpg);
     background-position: right;
     background-size: cover;
+    box-shadow: inset 40px 40px 100px black;
+
 }
 
-.main-header {
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 100%;
+.header::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.6);
+    inset: 0;
 }
+
 
 .nav-bar {
     display: flex;
@@ -26,6 +31,8 @@
     flex-wrap: wrap;
     padding-top: 7px;
     padding-right: 150px;
+    position: relative;
+    z-index: 10;
 }
 
 .logo-section {
@@ -34,6 +41,8 @@
 
 .logo-section img {
     width: 100%;
+    position: relative;
+    z-index: 100;
 }
 
 .nav-bar select {
@@ -79,6 +88,8 @@ select option:hover {
     justify-content: center;
     align-items: center;
     height: 88vh;
+    position: relative;
+    z-index: 10;
 }
 
 

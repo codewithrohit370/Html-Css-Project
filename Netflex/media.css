@@ -34,10 +34,13 @@
     .heading-section h2 {
         font-size: 32px;
         line-height: 40px;
+        font-weight: bolder;
+        margin-bottom: 15px;
     }
 
     .heading-section h3 {
         font-size: 16px;
+        font-weight: 500;
     }
 
     .input-section p {
@@ -62,6 +65,7 @@
 @media screen and (min-width:200px) and (max-width:460px) {
     .header{
         height: 70vh;
+        background-position: center;
     }
 
     .heading-section {
