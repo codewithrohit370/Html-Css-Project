@@ -1,13 +1,50 @@
+/* 🚨 Thin / Light - Weight 300 */
 @font-face {
-    font-family: 'Netflix Sans';
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),
-         url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff');
+  font-family: 'Netflix Sans';
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format('woff2'),
+       url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format('woff');
 }
+
+/* 🎬 Regular - Weight 400 */
+@font-face {
+  font-family: 'Netflix Sans';
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format('woff2'),
+       url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format('woff');
+}
+
+/* 🍿 Medium - Weight 500 */
+@font-face {
+  font-family: 'Netflix Sans';
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://nflxext.com) format('woff2'),
+       url(https://nflxext.com) format('woff');
+}
+
+/* 🚀 Bold - Weight 700 */
+@font-face {
+  font-family: 'Netflix Sans';
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://nflxext.com) format('woff2'),
+       url(https://nflxext.com) format('woff');
+}
+
+/* 👑 Black / Heavy - Weight 900 */
+@font-face {
+  font-family: 'Netflix Sans';
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://nflxext.com) format('woff2'),
+       url(https://nflxext.com) format('woff');
+}
+
 
 body {
     font-family: 'Netflix Sans', sans-serif !important; 
     box-sizing: border-box;
-    border: 2px solid red;
 }
