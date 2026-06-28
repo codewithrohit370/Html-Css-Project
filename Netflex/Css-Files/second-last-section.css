@@ -1,0 +1,52 @@
+.second-last-section{
+    padding: 30px 100px 50px 140px;
+}
+
+
+.second-last-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.input-section-2 {
+    width: 600px;
+    display: flex;
+    gap: 10px;
+}
+
+.second-last-section p {
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.email-inp-2 {
+    flex: 1;
+    background-color: rgba(28, 28, 28, 0.4);
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: white;
+}
+
+.email-inp-2::placeholder {
+    font-weight: bolder;
+    color: rgb(151, 151, 151);
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.get-started-btn {
+    background-color: rgb(233, 36, 36);
+    color: white;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 16px 35px 16px 21px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

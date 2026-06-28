@@ -1,0 +1,47 @@
+.last-section{
+    padding: 30px 100px 50px 140px;
+}
+
+.Q-call{
+    color: #BBBBBBF2;
+    font-size: 16px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.Q-call span{
+    text-decoration: underline;
+}
+.list-container a{
+    color: #BBBBBBF2;
+    font-size: 14px;
+}
+
+.list-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+}
+
+.language-section select {
+    background-color: rgba(128, 128, 128, 0.1);
+    color: white;
+    text-align: center;
+    appearance: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 120px;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.second-last-p{
+    font-size: 14px;
+    color: #BBBBBBF2;
+    margin-top: 40px;
+}
+.last-p{
+    margin-top: 40px;
+    font-size: 13px;
+    color: #bbbbbbb6;
+}

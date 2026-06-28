@@ -1,0 +1,32 @@
+.Ask-Section{
+    padding: 30px 100px 50px 135px;
+}
+
+.ask-heading{   
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.ask-container{
+    padding-left: 10px;
+}
+
+
+.ask-box{
+   background-color: #414141;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 24px;
+   margin-bottom: 10px;
+   cursor: pointer;
+}
+.ask-box:hover{
+    opacity: 0.8;
+}
+
+.ask-box p{
+    font-size: 24px;
+    font-weight: 300px;
+}
