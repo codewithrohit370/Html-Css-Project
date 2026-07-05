@@ -67,7 +67,7 @@
         height: 70vh;
         background-position: center;
     }
-        .header::before{
+    .header::before{
     content: "";
     position: absolute;
     z-index: 0;
@@ -139,10 +139,18 @@
         padding-left: 50px;
         padding-right: 50px;
         padding-top: 30px;
-        height: calc(92vh - 13vh);
+        height: calc(87vh - 13vh);
         padding-bottom: 20px;
     }
+    .header::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.6);
+    inset: 0;
 
+}
 }
 
 /* Movie-section */
@@ -160,7 +168,7 @@
         width: 95px;
     }
     .scroll-box{
-        padding-left: 10px;
+    padding-left: 10px;
     padding-right: 5px;
     }
     
