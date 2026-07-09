@@ -1,0 +1,88 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1600" y2="900">
+      <stop offset="0%" stop-color="#F8FAFF"/>
+      <stop offset="50%" stop-color="#EEF4FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGradient)"/>
+
+  <!-- Purple Blob -->
+  <circle cx="-80" cy="-40" r="180"
+          fill="#7C5CFF"
+          opacity="0.35"
+          filter="url(#blur)"/>
+
+  <!-- Pink Blob -->
+  <circle cx="1560" cy="20" r="170"
+          fill="#FF8BC2"
+          opacity="0.30"
+          filter="url(#blur)"/>
+
+  <!-- Blue Blob -->
+  <circle cx="1480" cy="860" r="220"
+          fill="#82D9FF"
+          opacity="0.25"
+          filter="url(#blur)"/>
+
+  <!-- Purple Glow -->
+  <circle cx="800" cy="120" r="250"
+          fill="#8F7CFF"
+          opacity="0.08"
+          filter="url(#blur)"/>
+
+  <!-- Dot Pattern Left -->
+  <g fill="#C8CDEB">
+    <circle cx="80" cy="120" r="3"/>
+    <circle cx="105" cy="120" r="3"/>
+    <circle cx="130" cy="120" r="3"/>
+    <circle cx="155" cy="120" r="3"/>
+
+    <circle cx="80" cy="145" r="3"/>
+    <circle cx="105" cy="145" r="3"/>
+    <circle cx="130" cy="145" r="3"/>
+    <circle cx="155" cy="145" r="3"/>
+
+    <circle cx="80" cy="170" r="3"/>
+    <circle cx="105" cy="170" r="3"/>
+    <circle cx="130" cy="170" r="3"/>
+    <circle cx="155" cy="170" r="3"/>
+
+    <circle cx="80" cy="195" r="3"/>
+    <circle cx="105" cy="195" r="3"/>
+    <circle cx="130" cy="195" r="3"/>
+    <circle cx="155" cy="195" r="3"/>
+  </g>
+
+  <!-- Dot Pattern Right -->
+  <g fill="#C8CDEB">
+    <circle cx="1440" cy="120" r="3"/>
+    <circle cx="1465" cy="120" r="3"/>
+    <circle cx="1490" cy="120" r="3"/>
+    <circle cx="1515" cy="120" r="3"/>
+
+    <circle cx="1440" cy="145" r="3"/>
+    <circle cx="1465" cy="145" r="3"/>
+    <circle cx="1490" cy="145" r="3"/>
+    <circle cx="1515" cy="145" r="3"/>
+
+    <circle cx="1440" cy="170" r="3"/>
+    <circle cx="1465" cy="170" r="3"/>
+    <circle cx="1490" cy="170" r="3"/>
+    <circle cx="1515" cy="170" r="3"/>
+
+    <circle cx="1440" cy="195" r="3"/>
+    <circle cx="1465" cy="195" r="3"/>
+    <circle cx="1490" cy="195" r="3"/>
+    <circle cx="1515" cy="195" r="3"/>
+  </g>
+
+</svg>

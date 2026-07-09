@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="heading">
+            <h1>Todo<span>-List</span></h1>
+            <p>Organize your tasks and stay productive</p>
+        </div>
+
+        <div class="input-section">
+            <input type="text" class="input-js" placeholder='What do you need to do?'' required>
+                <input type="date" class="due-date-js" required>
+                <button class="add-btn" onclick="addTodo()" type="button">Add <img src="svg/plus.svg" alt=""></button>
+            </div>
+         <div class="Container">
+            <div class="todo-section">
+                <div class="todo-heading">
+                    <p>Todo List</p>
+                </div>
+                <div class="todo-list">
+
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <p>Submit-List</p>
+                <div class="submit-list">
+                </div>
+            </div>
+
+            <button class="Clear-js" onclick="clearTodo()">Clear</button>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
