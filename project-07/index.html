@@ -11,6 +11,7 @@
 
 <body>
     <div class="main-container">
+
         <div class="heading">
             <h1>Todo<span>-List</span></h1>
             <p>Organize your tasks and stay productive</p>
@@ -18,9 +19,12 @@
 
         <div class="input-section">
             <input type="text" class="input-js" placeholder='What do you need to do?'' required>
+               <div class="input-btns">
                 <input type="date" class="due-date-js" required>
-                <button class="add-btn" onclick="addTodo()" type="button">Add <img src="svg/plus.svg" alt=""></button>
-            </div>
+                <button class="add-btn" onclick="
+                addTodo()" type="button">Add <img src="svg/plus.svg" alt=""></button>
+               </div>
+        </div>
          <div class="Container">
             <div class="todo-section">
                 <div class="todo-heading">
@@ -37,12 +41,14 @@
                 </div>
             </div>
 
-            <button class="Clear-js" onclick="clearTodo()">Clear</button>
-
+            
         </div>
+
+        
+        <button class="Clear-js" onclick="clearPopup()">Clear</button>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" integrity="sha512-Qrpii3NEFZ02RN6ZqpTu6pS/5PEq7EzBYJLki3AKBd8IncrlAwQdZHzExYwS0+b1NM0/qfxI1GOhqWLVosocDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 </body>
 
