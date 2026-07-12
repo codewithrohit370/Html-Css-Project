@@ -66,6 +66,7 @@ function clearTodo() {
     localStorage.setItem('submitArray', JSON.stringify(submitArray))
     displayTodo();
     displaySubmit();
+
 }
 
 function addTodo() {
@@ -77,7 +78,7 @@ function addTodo() {
     console.log(dateData)
 
 
-    if (todoData === "" && dateInput.value === "") {
+    if (todoData === "" || dateInput.value === "") {
         displaypopup2();
     } else {
         todoArray.push({
@@ -117,7 +118,7 @@ function displaypopup() {
         gsap.to(".popup", {
             scale: 0,
             opacity: 0,
-            duration: 0.3,
+            duration: 1,
             onComplete: () => {
                 document.querySelector(".popup-background").remove();
             }
@@ -149,7 +150,7 @@ function displaypopup2() {
         gsap.to(".Task-not-add-popup", {
             scale: 0,
             opacity: 0,
-            duration: 0.3,
+            duration: 1,
             onComplete: () => {
                 document.querySelector(".popup-background").remove();
             }
@@ -158,6 +159,34 @@ function displaypopup2() {
 }
 
 function clearPopup() {
+     if(todoArray.length === 0 && submitArray.length === 0 ){
+        let btns = document.querySelector('body')
+        btns.insertAdjacentHTML(
+        "beforeend",
+
+        `<div class="popup-background-2">
+             <div class="popup-2">
+                <p>Add Todo First</p>
+            </div>
+        </div>    `
+    )
+    gsap.from(".popup-2", {
+        scale: 0,
+        opacity: 0,
+        duration: 1,
+        ease: "back.out(1.7)"
+    })
+    setTimeout(()=>{
+         gsap.to(".popup-2",{
+            opacity:0,
+            scale: 0,
+            duration: 0.6,
+            onComplete: () =>{
+               document.querySelector(".popup-background-2").remove();
+            }
+         })
+    },2000)
+    }else{
     let btns = document.querySelector('body')
     btns.insertAdjacentHTML(
         "beforeend",
@@ -177,7 +206,7 @@ function clearPopup() {
         opacity: 0,
         duration: 1,
         ease: "back.out(1.7)"
-    });
+    })};
 }
 function yesBtn() {
     gsap.to(".popup-2", {
