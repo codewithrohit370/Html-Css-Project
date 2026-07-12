@@ -3,6 +3,16 @@ let submitArray = JSON.parse(localStorage.getItem('submitArray')) || [];
 displayTodo()
 displaySubmit()
 
+let body = document.querySelector("body");
+body.addEventListener("keydown",(event)=>{
+    console.log(event.key)
+     if(event.key === "Enter"){
+        addTodo();
+     }else if(event.key === "Escape"){
+        clearPopup();
+     }
+})
+
 
 function displayTodo() {
     let todoHTMl = ''
