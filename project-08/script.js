@@ -9,7 +9,17 @@ let secPara = document.querySelector('.sec')
 let minPara = document.querySelector('.min')
 let hourPara = document.querySelector('.hour')
 let timeingID;
-let isBtn = false
+let isBtn = false;
+let body = document.querySelector("body")
+
+body.addEventListener("keydown",(event)=>{
+   
+    if(event.key === " "){
+        startTime();
+    }else if(event.key === "Escape"){
+        resetTimer();
+    }
+})
 
 function startTime() {
     getStartBtn.innerHTML = 'Stop Timer';
@@ -79,5 +89,6 @@ function resetTimer(){
     hourPara.innerHTML = `0${timer.hours}:`
     minPara.innerHTML = `0${timer.min}:`
     secPara.innerHTML = `0${timer.sec}`
-
+    secPara.classList.remove('timer-text')
+  
 }

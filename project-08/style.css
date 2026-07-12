@@ -19,8 +19,14 @@ body{
 
 .time{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
-    font-size: 100px;
+    font-size: 90px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 10px solid rgb(255, 174, 0);
 }
 
 .time .timer-text{
@@ -38,6 +44,7 @@ body{
     border: none;
     background-color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .btns .stop-btn{
