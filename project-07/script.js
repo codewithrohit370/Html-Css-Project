@@ -5,7 +5,6 @@ displaySubmit()
 
 let body = document.querySelector("body");
 body.addEventListener("keydown",(event)=>{
-    console.log(event.key)
      if(event.key === "Enter"){
         addTodo();
      }else if(event.key === "Escape"){
@@ -82,10 +81,8 @@ function clearTodo() {
 function addTodo() {
     let todoInput = document.querySelector('.input-js');
     let todoData = todoInput.value;
-    console.log(todoData);
     let dateInput = document.querySelector('.due-date-js');
     let dateData = dateInput.value.split('-');
-    console.log(dateData)
 
 
     if (todoData === "" || dateInput.value === "") {
@@ -121,19 +118,19 @@ function displaypopup() {
     gsap.from(".popup", {
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "back.out(1.7)"
     })
     setTimeout(function () {
         gsap.to(".popup", {
             scale: 0,
             opacity: 0,
-            duration: 1,
+            duration: 0.3,
             onComplete: () => {
                 document.querySelector(".popup-background").remove();
             }
         })
-    }, 2000)
+    }, 1500)
 }
 
 function displaypopup2() {
@@ -153,19 +150,19 @@ function displaypopup2() {
     gsap.from(".Task-not-add-popup", {
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "back.out(1.7)"
     })
     setTimeout(function () {
         gsap.to(".Task-not-add-popup", {
             scale: 0,
             opacity: 0,
-            duration: 1,
+            duration: 0.5,
             onComplete: () => {
                 document.querySelector(".popup-background").remove();
             }
         })
-    }, 2000)
+    }, 1500)
 }
 
 function clearPopup() {
@@ -183,19 +180,19 @@ function clearPopup() {
     gsap.from(".popup-2", {
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "back.out(1.7)"
     })
     setTimeout(()=>{
          gsap.to(".popup-2",{
             opacity:0,
             scale: 0,
-            duration: 0.6,
+            duration: 0.4,
             onComplete: () =>{
                document.querySelector(".popup-background-2").remove();
             }
          })
-    },2000)
+    },1500)
     }else{
     let btns = document.querySelector('body')
     btns.insertAdjacentHTML(
@@ -214,7 +211,7 @@ function clearPopup() {
     gsap.from(".popup-2", {
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration: 0.4,
         ease: "back.out(1.7)"
     })};
 }
@@ -222,7 +219,7 @@ function yesBtn() {
     gsap.to(".popup-2", {
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration:0.4,
         onComplete: () => {
             document.querySelector(".popup-background-2").remove();
         }
@@ -234,7 +231,7 @@ function NoBtn() {
     gsap.to(".popup-2", {
         scale: 0,
         opacity: 0,
-        duration: 1,
+        duration: 0.4,
         onComplete: () => {
             document.querySelector(".popup-background-2").remove();
         }
