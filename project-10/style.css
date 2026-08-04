@@ -32,6 +32,7 @@ body{
 
 .song-time{
     -webkit-appearance: none;
+    appearance: none;
     height: 5px;
     width: 100%;
     background-color: rgb(247, 10, 255);
