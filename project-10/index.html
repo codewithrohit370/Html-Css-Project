@@ -5,33 +5,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Player</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/toggle.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/media.css">
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
-        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="Audio-Container">
-        <img src="images/88bff30c49521bad727c8983aae42689005b18dd3905e54eaef6054176b8b05e.jpg">
-        <div class="audio-section">
-            <marquee direction="left" scrollamount="4" style="color: white; margin-bottom: 50px;">
-                🎵 Now Playing: Maine Pyar Kiya
-            </marquee>
-            <audio class="audio">
-                <source
-                    src="song/Maine Pyar kiya Lyrical _ Maine Pyar Kiya _ Lata Mangeshkar _ S.P. B _ Salman _ Bhagyashree _90s Hit [8sZesHXgizU].mp3">
-            </audio>
-            <input type="range" min="0" max="100" value="0" class="song-time">
-            <div class="buttons">
-                <button><i class="fa-solid fa-backward-step"></i></button>
-                <button class="playBtn"><i class="fa-solid fa-play"></i></button>
-                <button><i class="fa-solid fa-forward-step"></i></button>
-            </div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <i class="fa-solid fa-music"></i>
+            <h2>Music Player</h2>
         </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search Songs...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="theme-toggle">
+            <i class="fa-solid fa-moon"></i>
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN LAYOUT ================= -->
+
+    <div class="layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <h2>Playlist</h2>
+
+            <div class="song-list">
+
+                <div class="song-item">
+                    <img src="images/" alt="">
+                    <div>
+                        <h4>I'm Done</h4>
+                        <p>Maan Panu</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="images/88bff30c49521bad727c8983aae42689005b18dd3905e54eaef6054176b8b05e.jpg" alt="">
+                    <div>
+                        <h4>Maine Pyar Kiya</h4>
+                        <p>Lata Mangeshkar</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="images/song3.jpg" alt="">
+                    <div>
+                        <h4>Tum Hi Ho</h4>
+                        <p>Arijit Singh</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="images/song4.jpg" alt="">
+                    <div>
+                        <h4>Kesariya</h4>
+                        <p>Arijit Singh</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="images/song5.jpg" alt="">
+                    <div>
+                        <h4>O Maahi</h4>
+                        <p>Arijit Singh</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="images/song6.jpg" alt="">
+                    <div>
+                        <h4>Apna Bana Le</h4>
+                        <p>Arijit Singh</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- ================= PLAYER ================= -->
+
+        <div class="Audio-Container">
+
+            <img class="album-cover" src="images/88bff30c49521bad727c8983aae42689005b18dd3905e54eaef6054176b8b05e.jpg">
+
+            <div class="audio-section">
+
+                <div class="song-details">
+                    <h2 class="song-name">I'm Done</h2>
+                    <p class="artist-name">Maan Panu</p>
+                </div>
+
+                <audio class="audio">
+                    <source src="song/I m Done Maan Panu I-Popstar Vol.1 EP02 Amazon MX Player.mp3">
+                </audio>
+
+                <input type="range" class="song-time" min="0" max="100" value="0">
+
+                <div class="time-info">
+                    <span class="current-time">0:00</span>
+                    <span class="duration">0:00</span>
+                </div>
+
+                <div class="buttons">
+
+                    <button class="previousBtn">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+
+                    <button class="playBtn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <button class="nextBtn">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,47 @@
+
+.light-mode{
+    background:#f4f4f4;
+    color:#111;
+}
+
+.light-mode .header{
+    background:#ffffff;
+}
+
+.light-mode .sidebar{
+    background:#ffffff;
+}
+
+.light-mode .Audio-Container{
+    background:#ffffff;
+    color:#111;
+}
+
+.light-mode .search-box input{
+    background:#e9e9e9;
+    color:#111;
+}
+
+.light-mode .song-item:hover{
+    background:#ececec;
+}
+
+.light-mode .time-info{
+    color:#111;
+}
+
+.light-mode .song-details .song-name{
+    color:#111;
+}
+
+.light-mode .song-details .artist-name{
+    color:#555;
+}
+
+/* ================= LAYOUT ================= */
+
+.layout{
+    display:flex;
+    margin-top:70px;
+    height:calc(100vh - 70px);
+}
