@@ -33,11 +33,11 @@ export function formatTime(time) {
     return `${minutes}:${seconds}`;
 }
 
-export function songPlay(songid){
+export function songPlay(songid) {
     let html = "";
-    songs.forEach((song)=>{
-        if(song.songId === songid){
-            html=`
+    songs.forEach((song) => {
+        if (song.songId === songid) {
+            html = `
             <img class="album-cover" src="${song.songImage}">
 
             <div class="player-content">
@@ -88,7 +88,7 @@ export function songPlay(songid){
     return html;
 }
 
-export function randerSong(activeSong) {
+export function randerSong(activeSong, songid , onSongEnd) {
 
     const currentSong = document.querySelector(".audio");
 
@@ -98,7 +98,6 @@ export function randerSong(activeSong) {
     const durations = document.querySelectorAll(".duration");
 
     currentSong.play();
-
     playBtns.forEach(btn => {
         btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
     });
@@ -145,8 +144,7 @@ export function randerSong(activeSong) {
     });
 
     currentSong.addEventListener("ended", () => {
-    activeSong.classList.remove("active-song");
-    
+        onSongEnd(songid);
     });
 
 }
