@@ -6,6 +6,7 @@ const themeBtn = document.querySelector(".theme-toggle");
 const icon = themeBtn.querySelector("i");
 let currentSong = null;
 let currentPlayBtn = null;
+let activeSong = null;
 
 themeBtn.addEventListener("click", () => {
 
@@ -20,10 +21,6 @@ themeBtn.addEventListener("click", () => {
     }
 
 });
-
-// if(currentSong === null){
-//     document.querySelector('.Audio-Container').classList.add('Hidden-container')
-// }
 
 document.body.addEventListener("keydown", (event) => {
     if (event.code === "Space" && currentSong) {
@@ -49,8 +46,13 @@ document.querySelector('.song-list').innerHTML = html;
 let songbtn = document.querySelectorAll('.song-item')
 songbtn.forEach((button) => {
     button.addEventListener('click', () => {
-        let songID = button.dataset.songId;
+        if(activeSong){
+            activeSong.classList.remove("active-song");
+        }
+        let songID = Number(button.dataset.songId);
+        activeSong = button;
+        activeSong.classList.add("active-song");
         document.querySelector('.Audio-Container').innerHTML = songPlay(songID);
-        randerSong(currentSong, currentPlayBtn);
+        randerSong(activeSong);
     })
 })

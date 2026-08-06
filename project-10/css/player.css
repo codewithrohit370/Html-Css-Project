@@ -94,3 +94,8 @@
     height:72px;
     font-size:24px;
 }
+
+.active-song h4,
+.active-song p {
+    color: #1db954;
+}

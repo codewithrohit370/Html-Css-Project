@@ -1,14 +1,24 @@
 import { songs } from "./song.js";
 
 export function playAndPauseSong(song) {
-    
+
+    const playBtns = document.querySelectorAll(".playBtn");
+
     if (song.paused) {
         song.play();
-        document.querySelector('.playBtn').innerHTML = `<i class="fa-solid fa-pause"></i>`
-    }
-    else {
+
+        playBtns.forEach(btn => {
+            btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+        });
+
+    } else {
+
         song.pause();
-        document.querySelector('.playBtn').innerHTML = `<i class="fa-solid fa-play"></i>`;
+
+        playBtns.forEach(btn => {
+            btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+        });
+
     }
 }
 
@@ -28,7 +38,7 @@ export function songPlay(songid){
     songs.forEach((song)=>{
         if(song.songId === songid){
             html=`
-                <img class="album-cover" src="${song.songImage}">
+            <img class="album-cover" src="${song.songImage}">
 
             <div class="player-content">
 
@@ -69,7 +79,6 @@ export function songPlay(songid){
                     <span class="duration">0:00</span>
 
                     <button class="playBtn"><i class="fa-solid fa-play"></i></button>
-
                 </div>
 
             </div>
@@ -79,34 +88,65 @@ export function songPlay(songid){
     return html;
 }
 
+export function randerSong(activeSong) {
 
-export function randerSong(currentSong , currentPlayBtn) {
-    currentSong = document.querySelector(".audio");
-    currentPlayBtn = document.querySelector(".playBtn")
-    const range = document.querySelector(".song-time")
-    const currentTime = document.querySelector(".current-time");
-    const duration = document.querySelector(".duration");
+    const currentSong = document.querySelector(".audio");
+
+    const playBtns = document.querySelectorAll(".playBtn");
+    const ranges = document.querySelectorAll(".song-time");
+    const currentTimes = document.querySelectorAll(".current-time");
+    const durations = document.querySelectorAll(".duration");
 
     currentSong.play();
-    document.querySelector('.playBtn').innerHTML = `<i class="fa-solid fa-pause"></i>`
+
+    playBtns.forEach(btn => {
+        btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+    });
+
     currentSong.addEventListener("loadedmetadata", () => {
-        duration.innerText = formatTime(currentSong.duration);
+        durations.forEach(duration => {
+            duration.innerText = formatTime(currentSong.duration);
+        });
     });
 
     currentSong.addEventListener("timeupdate", () => {
+
         if (currentSong.duration) {
-            range.value = (currentSong.currentTime / currentSong.duration) * 100;
-            currentTime.innerText = formatTime(currentSong.currentTime);
-            duration.innerText = formatTime(currentSong.duration);
+
+            const value =
+                (currentSong.currentTime / currentSong.duration) * 100;
+
+            ranges.forEach(range => {
+                range.value = value;
+            });
+
+            currentTimes.forEach(time => {
+                time.innerText = formatTime(currentSong.currentTime);
+            });
+
+            durations.forEach(time => {
+                time.innerText = formatTime(currentSong.duration);
+            });
         }
+
     });
 
-
-    range.addEventListener("input", () => {
-        currentSong.currentTime = (range.value / 100) * currentSong.duration
+    ranges.forEach(range => {
+        range.addEventListener("input", () => {
+            currentSong.currentTime =
+                (range.value / 100) * currentSong.duration;
+        });
     });
 
-    currentPlayBtn.addEventListener("click", () => {
-        playAndPauseSong(currentSong);
+    playBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            playAndPauseSong(currentSong);
+        });
     });
+
+    currentSong.addEventListener("ended", () => {
+    activeSong.classList.remove("active-song");
+    
+    });
+
 }
