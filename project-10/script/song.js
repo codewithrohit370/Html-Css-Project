@@ -14,21 +14,21 @@ export let songs = [
         songSrc:"song/i-am-done.mp3" 
     },
     {
-        songId:'1',
+        songId:'3',
+        songName:"Maine Pyar Kiya",
+        ArtistName:"Arijit Singh",
+        songImage:"images/tumhi ho.jfif",
+        songSrc:"song/maien pyar kiya.mp3" 
+    },
+    {
+        songId:'4',
         songName:"Maine Pyar Kiya",
         ArtistName:"Lata Mangeshkar",
         songImage:"images/maien-pyar-kiya.jpg",
         songSrc:"song/maien pyar kiya.mp3" 
     },
     {
-        songId:'1',
-        songName:"Maine Pyar Kiya",
-        ArtistName:"Lata Mangeshkar",
-        songImage:"images/maien-pyar-kiya.jpg",
-        songSrc:"song/maien pyar kiya.mp3" 
-    },
-    {
-        songId:'1',
+        songId:'5',
         songName:"Maine Pyar Kiya",
         ArtistName:"Lata Mangeshkar",
         songImage:"images/maien-pyar-kiya.jpg",

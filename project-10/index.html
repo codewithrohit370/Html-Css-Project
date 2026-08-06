@@ -52,53 +52,6 @@
 
             <div class="song-list">
 
-                <div class="song-item">
-                    <img src="images/i'amDone.jfif" alt="">
-                    <div>
-                        <h4>I'm Done</h4>
-                        <p>Maan Panu</p>
-                    </div>
-                </div>
-
-                <div class="song-item">
-                    <img src="images/maien-pyar-kiya.jpg" alt="">
-                    <div>
-                        <h4>Maine Pyar Kiya</h4>
-                        <p>Lata Mangeshkar</p>
-                    </div>
-                </div>
-
-                <div class="song-item">
-                    <img src="images/tumhi ho.jfif" alt="">
-                    <div>
-                        <h4>Tum Hi Ho</h4>
-                        <p>Arijit Singh</p>
-                    </div>
-                </div>
-
-                <div class="song-item">
-                    <img src="images/song4.jpg" alt="">
-                    <div>
-                        <h4>Kesariya</h4>
-                        <p>Arijit Singh</p>
-                    </div>
-                </div>
-
-                <div class="song-item">
-                    <img src="images/song5.jpg" alt="">
-                    <div>
-                        <h4>O Maahi</h4>
-                        <p>Arijit Singh</p>
-                    </div>
-                </div>
-
-                <div class="song-item">
-                    <img src="images/song6.jpg" alt="">
-                    <div>
-                        <h4>Apna Bana Le</h4>
-                        <p>Arijit Singh</p>
-                    </div>
-                </div>
 
             </div>
 
@@ -108,39 +61,47 @@
 
         <div class="Audio-Container">
 
-            <img class="album-cover" src="images/maien-pyar-kiya.jpg">
+            <img class="album-cover" src="images/ChatGPT Image Aug 6, 2026, 10_37_58 PM.png">
 
-            <div class="audio-section">
+            <div class="player-content">
 
-                <div class="song-details">
-                    <h2 class="song-name">Maine Pyar Kiya</h2>
-                    <p class="artist-name">Lata Mangeshkar</p>
+                <!-- Desktop -->
+                <div class="desktop-player">
+
+                    <div class="song-details">
+                        <h2 class="song-name">Song Name</h2>
+                        <p class="artist-name">Artist</p>
+                    </div>
+
+                    <audio class="audio">
+                        <source src="">
+                    </audio>
+
+                    <input class="song-time" type="range">
+
+                    <div class="time-info">
+                        <span class="current-time">0:00</span>
+                        <span class="duration">0:00</span>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="previousBtn"><i class="fa-solid fa-backward-step"></i></button>
+                        <button class="playBtn"><i class="fa-solid fa-play"></i></button>
+                        <button class="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+                    </div>
+
                 </div>
 
-                <audio class="audio">
-                    <source src="song/maien pyar kiya.mp3">
-                </audio>
+                <!-- Mobile -->
+                <div class="mobile-player">
 
-                <input type="range" class="song-time" min="0" max="100" value="0">
-
-                <div class="time-info">
                     <span class="current-time">0:00</span>
+
+                    <input class="song-time" type="range">
+
                     <span class="duration">0:00</span>
-                </div>
 
-                <div class="buttons">
-
-                    <button class="previousBtn">
-                        <i class="fa-solid fa-backward-step"></i>
-                    </button>
-
-                    <button class="playBtn">
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-
-                    <button class="nextBtn">
-                        <i class="fa-solid fa-forward-step"></i>
-                    </button>
+                    <button class="playBtn"><i class="fa-solid fa-play"></i></button>
 
                 </div>
 

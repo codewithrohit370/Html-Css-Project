@@ -1,10 +1,9 @@
 .Audio-Container{
     flex:1;
     display:flex;
-    justify-content: center;
+    gap:40px;
     align-items:center;
-    gap:45px;
-    padding:40px;
+    padding:35px;
     margin:30px;
 
     background:#1a1f27;
@@ -12,44 +11,37 @@
     box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
-/* Album Cover */
-
-.player-top{
-    flex-shrink:0;
-}
-
 .album-cover{
     width:300px;
     height:300px;
     object-fit:cover;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
-/* Right Side */
-
-.audio-section{
+.player-content{
     flex:1;
-    max-width:430px;
 }
 
-.song-details{
-    margin-bottom:25px;
+/* Desktop */
+
+.desktop-player{
+    display:block;
+}
+
+.mobile-player{
+    display:none;
 }
 
 .song-name{
     color:#fff;
-    font-size:30px;
-    font-weight:700;
-    margin-bottom:6px;
+    font-size:32px;
+    margin-bottom:8px;
 }
 
 .artist-name{
     color:#bdbdbd;
-    font-size:16px;
+    margin-bottom:25px;
 }
-
-/* Progress */
 
 .song-time{
     width:100%;
@@ -66,25 +58,19 @@
     height:18px;
     border-radius:50%;
     background:#ff00ff;
-    border:3px solid #fff;
+    border:3px solid white;
 }
-
-/* Time */
 
 .time-info{
     display:flex;
     justify-content:space-between;
-    margin-top:10px;
+    margin-top:8px;
     color:#bdbdbd;
-    font-size:13px;
 }
-
-/* Buttons */
 
 .buttons{
     display:flex;
     justify-content:center;
-    align-items:center;
     gap:25px;
     margin-top:30px;
 }
@@ -92,30 +78,19 @@
 .buttons button{
     width:55px;
     height:55px;
+
     border:none;
     border-radius:50%;
+
     background:#ff00ff;
-    color:#fff;
-    font-size:18px;
+    color:white;
     cursor:pointer;
-    transition:.3s;
+
+    font-size:18px;
 }
 
-.buttons button:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 20px #ff00ff;
-}
-
-.buttons button:nth-child(2){
+.buttons .playBtn{
     width:72px;
     height:72px;
     font-size:24px;
-}
-
-.volume-slider::-webkit-slider-thumb{
-    appearance:none;
-    width:15px;
-    height:15px;
-    border-radius:50%;
-    background:#ff00ff;
 }
