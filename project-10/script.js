@@ -1,38 +1,52 @@
-    import { playAndPauseSong, formatTime, songPlay , randerSong } from "./script/functions.js";
-    import { songs } from "./script/song.js";
+import { playAndPauseSong, formatTime, songPlay, randerSong } from "./script/functions.js";
+import { songs } from "./script/song.js";
 
 
-    const themeBtn = document.querySelector(".theme-toggle");
-    const icon = themeBtn.querySelector("i");
-    let currentSong = null;
-    let currentPlayBtn = null;
-    let activeSong = null;
-    let songID = null;
+const themeBtn = document.querySelector(".theme-toggle");
+const icon = themeBtn.querySelector("i");
+let currentSong = null;
+let currentPlayBtn = null;
+let activeSong = null;
+let songID = null;
 
-    themeBtn.addEventListener("click", () => {
+themeBtn.addEventListener("click", () => {
 
-        document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("light-mode");
 
-        if (document.body.classList.contains("light-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-        }
+    if (document.body.classList.contains("light-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+    }
 
-    });
+});
 
-    document.body.addEventListener("keydown", (event) => {
-        if (event.code === "Space" && currentSong) {
-            event.preventDefault();
-            playAndPauseSong(currentSong);
-        }
-    });
+document.body.addEventListener("keydown", (event) => {
 
-    let html = '';
-    songs.forEach((song) => {
-        html += `
+    if (!currentSong) return;
+
+    if (event.code === "Space") {
+        event.preventDefault();
+        playAndPauseSong(currentSong);
+    }
+
+    if (event.code === "ArrowRight") {
+        document.querySelector(".nextBtn").click();
+    }
+
+    if (event.code === "ArrowLeft") {
+        document.querySelector(".previousBtn").click();
+    }
+
+});
+
+
+
+let html = '';
+songs.forEach((song) => {
+    html += `
                 <div class="song-item" data-song-id="${song.songId}" >
                     <img src="${song.songImage}" alt="">
                     <div>
@@ -41,40 +55,50 @@
                     </div>
                 </div>
             `
+})
+document.querySelector('.song-list').innerHTML = html;
+
+let songbtn = document.querySelectorAll('.song-item')
+songbtn.forEach((button) => {
+    button.addEventListener('click', () => {
+        songID = Number(button.dataset.songId);
+        playSong(songID);
     })
-    document.querySelector('.song-list').innerHTML = html;
-
-    let songbtn = document.querySelectorAll('.song-item')
-    songbtn.forEach((button) => {
-        button.addEventListener('click', () => {
-            songID = Number(button.dataset.songId);
-            playSong(songID);
-        })
-    })
+})
 
 
-    function playSong(songID) {
-        const button = document.querySelector(
-            `[data-song-id="${songID}"]`
-        );
-        if (activeSong) {
-            activeSong.classList.remove("active-song");
-        }
+function playSong(songID) {
 
-        activeSong = button;
-        activeSong.classList.add("active-song");
+    if (currentSong) {
+        currentSong.pause();
+        currentSong.currentTime = 0;
+    }
 
-        document.querySelector(".Audio-Container").innerHTML = songPlay(songID);
+    const button = document.querySelector(
+        `[data-song-id="${songID}"]`
+    );
+    if (activeSong) {
+        activeSong.classList.remove("active-song");
+    }
 
-        randerSong(activeSong, songID, (currentId) => {
+    activeSong = button;
+    activeSong.classList.add("active-song");
+
+    document.querySelector(".Audio-Container").innerHTML = songPlay(songID);
+    currentSong = document.querySelector(".audio");
+
+    randerSong(activeSong, songID, (currentId) => {
 
         let newSongid = currentId + 1;
 
         if (newSongid > songs.length) {
             newSongid = 1;
         }
+        if (newSongid < 1) {
+            newSongid = songs.length
+        }
 
         playSong(newSongid);
 
     });
-    }
+}

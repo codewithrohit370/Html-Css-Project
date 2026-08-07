@@ -77,6 +77,21 @@
 
 /* Play */
 
+button{
+    width:32px;
+    height:32px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#ff00ff;
+    color:white;
+    cursor:pointer;
+
+    font-size:10px;
+}
+
+
 .mobile-player .playBtn{
 
     width:42px;
