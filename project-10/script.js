@@ -66,7 +66,6 @@ songbtn.forEach((button) => {
     })
 })
 
-
 function playSong(songID) {
 
     if (currentSong) {

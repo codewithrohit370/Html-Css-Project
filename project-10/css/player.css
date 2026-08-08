@@ -67,26 +67,72 @@
     color:#bdbdbd;
 }
 
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin-top:30px;
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-top: 30px;
+    column-gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.buttons button{
-    width:55px;
-    height:55px;
-
-    border:none;
-    border-radius:50%;
-
-    background:#ff00ff;
-    color:white;
-    cursor:pointer;
-
-    font-size:18px;
+.main-buttons button {
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #ff00ff;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
 }
+
+.suffleBtn {
+    justify-self: start;
+    width: 50px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: #7c3aed;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+.suffleBtnActive{  
+    background: #1db954;
+}
+
+.suffleBtn:active { 
+    background: #1db954;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+.main-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.loopSong {
+    justify-self: end;
+    width: 50px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: #7c3aed;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+.suffleBtn:active { 
+    background: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+
+
 
 .buttons .playBtn{
     width:72px;

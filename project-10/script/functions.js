@@ -1,24 +1,22 @@
 import { songs } from "./song.js";
 
+  let autoSuffleBtn = false;
+
 export function playAndPauseSong(song) {
 
     const playBtns = document.querySelectorAll(".playBtn");
 
     if (song.paused) {
         song.play();
-
         playBtns.forEach(btn => {
             btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
         });
 
     } else {
-
         song.pause();
-
         playBtns.forEach(btn => {
             btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
         });
-
     }
 }
 
@@ -62,9 +60,25 @@ export function songPlay(songid) {
                     </div>
 
                     <div class="buttons">
-                        <button class="previousBtn"><i class="fa-solid fa-backward-step"></i></button>
-                        <button class="playBtn"><i class="fa-solid fa-play"></i></button>
-                        <button class="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+
+                        <button class="suffleBtn"><i class="fa-solid fa-shuffle"></i></button>
+
+                        <div class="main-buttons">
+                            <button class="previousBtn">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </button>
+
+                            <button class="playBtn">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+
+                            <button class="nextBtn">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </button>
+                        </div>
+
+                        <button class="loopSong"><i class="fa-solid fa-repeat"></i></button>
+
                     </div>
 
                 </div>
@@ -81,6 +95,7 @@ export function songPlay(songid) {
                     <button class="previousBtn"><i class="fa-solid fa-backward-step"></i></button>
                     <button class="playBtn"><i class="fa-solid fa-play"></i></button>
                     <button class="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+
                 </div>
 
             </div>
@@ -100,11 +115,26 @@ export function randerSong(activeSong, songid , onSongEnd) {
     const durations = document.querySelectorAll(".duration");
     const nextSong = document.querySelectorAll('.nextBtn');
     const previousBtn = document.querySelectorAll(".previousBtn")
-
     nextSong.forEach((songBtn)=>{
         songBtn.addEventListener('click',()=>{
         onSongEnd(songid);
     });
+    
+});
+
+const suffleBtn = document.querySelector(".suffleBtn");
+if (autoSuffleBtn) {
+    suffleBtn.classList.add("suffleBtnActive");
+}
+
+suffleBtn.addEventListener("click", () => {
+    autoSuffleBtn = !autoSuffleBtn;
+    console.log(autoSuffleBtn)
+    suffleBtn.classList.toggle(
+        "suffleBtnActive",
+        autoSuffleBtn
+    );
+
 });
 
     previousBtn.forEach((songBtn)=>{
@@ -160,7 +190,20 @@ export function randerSong(activeSong, songid , onSongEnd) {
     });
 
     currentSong.addEventListener("ended", () => {
-        onSongEnd(songid);
+        if(autoSuffleBtn){
+            onSongEnd(AutoSuffle() - 1)
+        }else{
+            onSongEnd(songid);
+        }
     });
 
+    function AutoSuffle(){
+    let randomID = Math.floor(Math.random() * songs.length) + 1;
+    if (randomID === songid) {
+    randomID = Math.floor(Math.random() * songs.length) + 1;
+    }
+    return randomID
 }
+}
+
+
