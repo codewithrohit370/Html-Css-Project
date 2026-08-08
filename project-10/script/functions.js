@@ -1,6 +1,7 @@
 import { songs } from "./song.js";
 
   let autoSuffleBtn = false;
+  let loopSong = false;
 
 export function playAndPauseSong(song) {
 
@@ -115,29 +116,58 @@ export function randerSong(activeSong, songid , onSongEnd) {
     const durations = document.querySelectorAll(".duration");
     const nextSong = document.querySelectorAll('.nextBtn');
     const previousBtn = document.querySelectorAll(".previousBtn")
-    nextSong.forEach((songBtn)=>{
-        songBtn.addEventListener('click',()=>{
-        onSongEnd(songid);
-    });
-    
-});
+
 
 const suffleBtn = document.querySelector(".suffleBtn");
 if (autoSuffleBtn) {
     suffleBtn.classList.add("suffleBtnActive");
+} else {
+    suffleBtn.classList.remove("suffleBtnActive");
+}
+const loopBtn = document.querySelector(".loopSong")
+if (loopSong) {
+    loopBtn.classList.add("loopSongActive");
+}else {
+    loopBtn.classList.remove("loopSongActive");
 }
 
 suffleBtn.addEventListener("click", () => {
     autoSuffleBtn = !autoSuffleBtn;
-    console.log(autoSuffleBtn)
     suffleBtn.classList.toggle(
         "suffleBtnActive",
         autoSuffleBtn
     );
 
+    if (autoSuffleBtn) {
+        loopSong = false;
+
+        loopBtn.classList.remove("loopSongActive");
+    }
 });
 
-    previousBtn.forEach((songBtn)=>{
+loopBtn.addEventListener("click", () => {
+
+    loopSong = !loopSong;
+
+    loopBtn.classList.toggle(
+        "loopSongActive",
+        loopSong
+    );
+
+    if (loopSong) {
+        autoSuffleBtn = false;
+
+        suffleBtn.classList.remove("suffleBtnActive");
+    }
+});
+
+nextSong.forEach((songBtn)=>{
+        songBtn.addEventListener('click',()=>{
+        onSongEnd(songid);
+    });  
+});
+
+previousBtn.forEach((songBtn)=>{
         songBtn.addEventListener('click',()=>{
         onSongEnd(songid-2)
     });
@@ -190,6 +220,13 @@ suffleBtn.addEventListener("click", () => {
     });
 
     currentSong.addEventListener("ended", () => {
+        
+    if (loopSong) {
+        currentSong.currentTime = 0;
+        currentSong.play();
+        return;
+    }
+
         if(autoSuffleBtn){
             onSongEnd(AutoSuffle() - 1)
         }else{

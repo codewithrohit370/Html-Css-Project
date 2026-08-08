@@ -101,11 +101,12 @@
 }
 .suffleBtnActive{  
     background: #1db954;
+    box-shadow: 0 0 12px rgba(29, 185, 84, 0.5);;
 }
 
 .suffleBtn:active { 
     background: #1db954;
-    box-shadow: 0 0 15px #ff00ff;
+    box-shadow: 0 0 12px rgba(29, 185, 84, 0.5);;
 }
 
 .main-buttons {
@@ -126,9 +127,14 @@
     cursor: pointer;
     font-size: 14px;
 }
-.suffleBtn:active { 
+.loopSong:active { 
     background: #ff00ff;
-    box-shadow: 0 0 15px #ff00ff;
+    box-shadow:0 0 12px rgba(29, 185, 84, 0.5);
+}
+
+.loopSongActive {
+    background: #1db954 !important;
+    box-shadow: 0 0 12px rgba(29, 185, 84, 0.5);
 }
 
 
