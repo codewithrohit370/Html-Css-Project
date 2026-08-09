@@ -117,6 +117,18 @@ export function randerSong(activeSong, songid , onSongEnd) {
     const nextSong = document.querySelectorAll('.nextBtn');
     const previousBtn = document.querySelectorAll(".previousBtn")
 
+    currentSong.addEventListener("play", () => {
+    playBtns.forEach(btn => {
+        btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+    });
+});
+
+currentSong.addEventListener("pause", () => {
+    playBtns.forEach(btn => {
+        btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    });
+});
+
 
 const suffleBtn = document.querySelector(".suffleBtn");
 if (autoSuffleBtn) {

@@ -1,123 +1,299 @@
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-.layout{
-    display:block;
-    margin-top:70px;
-}
-
-.sidebar{
-    width:100%;
-    height:calc(100vh - 70px - 95px);
-    padding:15px;
-    overflow-y:auto;
-    border:none;
-}
-
-.sidebar::-webkit-scrollbar{
-    display:none;
-}
-
-.Audio-Container{
-
-    position:fixed;
-    left:10px;
-    right:10px;
-    bottom:10px;
-
-    margin:0;
-    padding:10px;
-
-    background:#181818;
-
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    border-radius:15px;
-}
-
-/* Album */
-
-.album-cover{
-    width:55px;
-    height:55px;
-}
-
-/* Hide Desktop */
-
-.desktop-player{
-    display:none;
-}
-
-/* Show Mobile */
-
-.mobile-player{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    flex:1;
-}
-
-/* Time */
-
-.mobile-player .current-time,
-.mobile-player .duration{
-
-    color:#bdbdbd;
-    font-size:11px;
-
-    white-space:nowrap;
-}
-
-/* Slider */
-
-.mobile-player .song-time{
-    flex:1;
-}
-
-/* Play */
-
-button{
-    width:32px;
-    height:32px;
-
-    border:none;
-    border-radius:50%;
-
-    background:#ff00ff;
-    color:white;
-    cursor:pointer;
-
-    font-size:10px;
-}
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
 
 
-.mobile-player .playBtn{
+    /* =========================
+       LAYOUT
+    ========================= */
 
-    width:42px;
-    height:42px;
+    .layout {
+        display: block;
 
-    border:none;
-    border-radius:50%;
+        width: 100%;
+        height: calc(100vh - 70px);
 
-    background:#ff00ff;
-    color:white;
+        margin-top: 70px;
 
-    font-size:18px;
-}
+        overflow: hidden;
+    }
 
-/* Header */
 
-.search-box{
-    display:none;
-}
+    /* =========================
+       PLAYLIST
+    ========================= */
 
-.header{
-    padding:0 18px;
-}
+    .sidebar {
+        width: 100%;
+        height: 100%;
 
-.logo h2{
-    font-size:22px;
-}
+        box-sizing: border-box;
 
+        padding: 15px 15px 90px;
+
+        border: none;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* =========================
+       BOTTOM PLAYER
+    ========================= */
+
+    .Audio-Container {
+        position: fixed;
+
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+
+        width: 92%;
+        height: 70px;
+
+        margin: 0;
+        padding: 7px 10px;
+
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        background: #181818;
+
+        border-radius: 20px;
+
+        z-index: 9999;
+
+        flex: none;
+
+        min-height: 0;
+
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+
+    /* =========================
+       ALBUM
+    ========================= */
+
+    .album-cover {
+        width: 56px;
+        height: 56px;
+
+        flex-shrink: 0;
+
+        object-fit: cover;
+
+        border-radius: 8px;
+    }
+
+
+    /* =========================
+       PLAYER CONTENT
+    ========================= */
+
+    .player-content {
+        flex: 1;
+
+        width: 100%;
+        min-width: 0;
+
+        height: 100%;
+    }
+
+
+    /* =========================
+       DESKTOP PLAYER
+    ========================= */
+
+    .desktop-player {
+        display: none;
+    }
+
+
+    /* =========================
+       MOBILE PLAYER
+    ========================= */
+
+    .mobile-player {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+
+        gap: 7px;
+
+        flex: none;
+    }
+
+
+    /* =========================
+       TIME
+    ========================= */
+
+    .mobile-player .current-time,
+    .mobile-player .duration {
+        color: #bdbdbd;
+
+        font-size: 9px;
+
+        white-space: nowrap;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       SLIDER
+    ========================= */
+
+    .mobile-player .song-time {
+        flex: 1;
+
+        width: auto;
+        min-width: 35px;
+
+        height: 4px;
+
+        margin: 0;
+
+        appearance: none;
+
+        background: #444;
+
+        border-radius: 10px;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-player .song-time::-webkit-slider-thumb {
+        appearance: none;
+
+        width: 11px;
+        height: 11px;
+
+        border-radius: 50%;
+
+        background: #ff00ff;
+
+        border: 2px solid white;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .mobile-player button {
+        width: 34px;
+        height: 34px;
+
+        padding: 0;
+
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: #ff00ff;
+
+        color: white;
+
+        font-size: 11px;
+
+        cursor: pointer;
+    }
+
+
+    /* PLAY BUTTON */
+
+    .mobile-player .playBtn {
+        width: 42px;
+        height: 42px;
+
+        font-size: 17px;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .search-box {
+        display: none;
+    }
+
+    .header {
+        height: 70px;
+
+        box-sizing: border-box;
+
+        padding: 0 18px;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+
+    /* =========================
+       SMALL PHONE
+    ========================= */
+
+    @media (max-width: 420px) {
+
+        .Audio-Container {
+            height: 68px;
+
+            padding: 6px 8px;
+        }
+
+        .album-cover {
+            width: 52px;
+            height: 52px;
+        }
+
+        .mobile-player {
+            gap: 5px;
+        }
+
+        .mobile-player .current-time,
+        .mobile-player .duration {
+            font-size: 8px;
+        }
+
+        .mobile-player button {
+            width: 32px;
+            height: 32px;
+
+            font-size: 10px;
+        }
+
+        .mobile-player .playBtn {
+            width: 38px;
+            height: 38px;
+
+            font-size: 15px;
+        }
+    }
 }

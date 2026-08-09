@@ -1,66 +1,98 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 
-.header{
-    width:100%;
-    height:70px;
-    background:#161b22;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 30px;
-    border-bottom:1px solid rgba(255,255,255,.1);
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    background: rgba(11, 15, 20, 0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo i{
-    color:#ff00ff;
-    font-size:28px;
+.logo i {
+    color: #ff00ff;
+    font-size: 28px;
 }
 
-.search-box{
-    position:relative;
-    width:350px;
+.logo h2 {
+    font-size: 22px;
+    letter-spacing: .5px;
 }
 
-.search-box input{
-    width:100%;
-    padding:12px 45px 12px 15px;
-    border:none;
-    outline:none;
-    border-radius:25px;
-    background:#20262e;
-    color:white;
+/* Search */
+
+.search-box {
+    position: relative;
+    width: min(400px, 40vw);
 }
 
-.search-box i{
-    position:absolute;
-    right:18px;
-    top:50%;
-    transform:translateY(-50%);
+.search-box input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 45px 0 18px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    outline: none;
+    border-radius: 25px;
+
+    background: #171d25;
+    color: white;
+
+    transition: .25s;
 }
 
-.theme-toggle{
-    width:45px;
-    height:45px;
-    background:#ff00ff;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    transition:.3s;
-    font-size:20px;
+.search-box input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 0 3px rgba(255,0,255,.08);
 }
 
-.theme-toggle:hover{
-    transform:rotate(180deg) scale(1.1);
-    box-shadow:0 0 15px #ff00ff;
+.search-box i {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+
+
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #202733;
+    color: #fff;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.theme-toggle:hover {
+    background: #ff00ff;
+    transform: rotate(15deg);
 }
