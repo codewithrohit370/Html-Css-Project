@@ -4,12 +4,12 @@ displayTodo()
 displaySubmit()
 
 let body = document.querySelector("body");
-body.addEventListener("keydown",(event)=>{
-     if(event.key === "Enter"){
+body.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
         addTodo();
-     }else if(event.key === "Escape"){
+    } else if (event.key === "Escape") {
         clearPopup();
-     }
+    }
 })
 
 
@@ -166,39 +166,39 @@ function displaypopup2() {
 }
 
 function clearPopup() {
-     if(todoArray.length === 0 && submitArray.length === 0 ){
+    if (todoArray.length === 0 && submitArray.length === 0) {
         let btns = document.querySelector('body')
         btns.insertAdjacentHTML(
-        "beforeend",
+            "beforeend",
 
-        `<div class="popup-background-2">
+            `<div class="popup-background-2">
              <div class="popup-2">
                 <p>Add Todo First</p>
             </div>
         </div>    `
-    )
-    gsap.from(".popup-2", {
-        scale: 0,
-        opacity: 0,
-        duration: 0.5,
-        ease: "back.out(1.7)"
-    })
-    setTimeout(()=>{
-         gsap.to(".popup-2",{
-            opacity:0,
+        )
+        gsap.from(".popup-2", {
             scale: 0,
-            duration: 0.4,
-            onComplete: () =>{
-               document.querySelector(".popup-background-2").remove();
-            }
-         })
-    },1500)
-    }else{
-    let btns = document.querySelector('body')
-    btns.insertAdjacentHTML(
-        "beforeend",
+            opacity: 0,
+            duration: 0.5,
+            ease: "back.out(1.7)"
+        })
+        setTimeout(() => {
+            gsap.to(".popup-2", {
+                opacity: 0,
+                scale: 0,
+                duration: 0.4,
+                onComplete: () => {
+                    document.querySelector(".popup-background-2").remove();
+                }
+            })
+        }, 1500)
+    } else {
+        let btns = document.querySelector('body')
+        btns.insertAdjacentHTML(
+            "beforeend",
 
-        `<div class="popup-background-2">
+            `<div class="popup-background-2">
              <div class="popup-2">
                 <p>Are you Sure ?</p>
                 <div class="btns-2">
@@ -207,19 +207,20 @@ function clearPopup() {
                 </div>
             </div>
         </div>    `
-    )
-    gsap.from(".popup-2", {
-        scale: 0,
-        opacity: 0,
-        duration: 0.4,
-        ease: "back.out(1.7)"
-    })};
+        )
+        gsap.from(".popup-2", {
+            scale: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)"
+        })
+    };
 }
 function yesBtn() {
     gsap.to(".popup-2", {
         scale: 0,
         opacity: 0,
-        duration:0.4,
+        duration: 0.4,
         onComplete: () => {
             document.querySelector(".popup-background-2").remove();
         }
