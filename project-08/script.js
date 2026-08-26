@@ -12,11 +12,11 @@ let timeingID;
 let isBtn = false;
 let body = document.querySelector("body")
 
-body.addEventListener("keydown",(event)=>{
-   
-    if(event.key === " "){
+body.addEventListener("keydown", (event) => {
+
+    if (event.key === " ") {
         startTime();
-    }else if(event.key === "Escape"){
+    } else if (event.key === "Escape") {
         resetTimer();
     }
 })
@@ -32,18 +32,18 @@ function startTime() {
     }
     else {
         clearInterval(timeingID);
-         getStartBtn.innerHTML = 'Start Timer';
-         isBtn = false
-         getStartBtn.classList.remove('stop-btn')
+        getStartBtn.innerHTML = 'Start Timer';
+        isBtn = false
+        getStartBtn.classList.remove('stop-btn')
     }
-    
+
 }
 
 function sectime() {
 
     secPara.classList.add('timer-text')
     timer.sec++;
-    if(timer.sec === 60){
+    if (timer.sec === 60) {
         timer.sec = 0
         mintime();
     }
@@ -52,13 +52,13 @@ function sectime() {
     } else {
         secPara.innerHTML = `0${timer.sec}`
     }
-   
+
 }
 
 function mintime() {
     minPara.classList.add('timer-text')
     timer.min++;
-    if(timer.min === 60){
+    if (timer.min === 60) {
         timer.min = 0
         hourtime();
     }
@@ -67,7 +67,7 @@ function mintime() {
     } else {
         minPara.innerHTML = `0${timer.min}:`
     }
-   
+
 }
 
 function hourtime() {
@@ -79,10 +79,10 @@ function hourtime() {
     } else {
         hourPara.innerHTML = `0${timer.hours}:`
     }
-  
+
 }
 
-function resetTimer(){
+function resetTimer() {
     timer.hours = 0;
     timer.min = 0;
     timer.sec = 0;
@@ -90,5 +90,5 @@ function resetTimer(){
     minPara.innerHTML = `0${timer.min}:`
     secPara.innerHTML = `0${timer.sec}`
     secPara.classList.remove('timer-text')
-  
+
 }
