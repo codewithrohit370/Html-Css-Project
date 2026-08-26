@@ -1,43 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-color: rgb(28, 28, 28);
     font-family: Arial, Helvetica, sans-serif;
-    color: white;  
+    color: white;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     position: relative;
 }
 
-.heading-section{
+.heading-section {
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
     align-items: center;
-    gap:20px;
+    gap: 20px;
     color: rgb(255, 196, 0);
 }
-.heading-section input{
+
+.heading-section input {
     padding: 7px 20px 7px 20px;
     font-size: 14px;
 }
 
-.heading-section button{
+.heading-section button {
     padding: 7px 20px 7px 20px;
     font-weight: bolder;
     background-color: rgb(245, 21, 21);
     border: none;
 }
 
-.popup{
+.popup {
     width: 200px;
     height: 200px;
     background-color: white;
-    color: black;   
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +48,8 @@ body{
     font-size: 20px;
     font-weight: bolder;
 }
-.container{
+
+.container {
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -57,6 +59,3 @@ body{
     justify-content: center;
     align-items: center;
 }
-
-
-

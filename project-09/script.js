@@ -27,10 +27,10 @@ function Submit() {
 
     CalculateAge()
 
-    setInterval(()=>{
-     document.querySelector(".container").remove();
-    },2000)
-    
+    setInterval(() => {
+        document.querySelector(".container").remove();
+    }, 2000)
+
 }
 
 function CalculateAge() {
