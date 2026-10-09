@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onkeydown="cheakKey(event)">
+
+    <div class="Calculator-container">
+        <div class="heading">
+            <h1>Modern <span>Calculator</span></h1>
+            <p>Fast • Accurate • Easy to Use</p>
+        </div>
+        <div class="main-container">
+            <p class="p-1"></p>
+            <div class="button-container">
+
+                <button onclick="
+                     updateCalculation(1)
+                ">1</button>
+
+                <button onclick="
+                    updateCalculation(2)
+                    ">2</button>
+
+                <button onclick="
+                    updateCalculation(3)
+                    ">3</button>
+
+                <button onclick="
+                  updateCalculation(' + ')
+                      ">+</button>
+
+                <button onclick="
+                     updateCalculation(4)
+                     ">4</button>
+
+                <button onclick="
+                    updateCalculation(5)
+                             ">5</button>
+
+                <button onclick="
+                   updateCalculation(6)
+                  ">6</button>
+
+                <button onclick="
+                   updateCalculation(' - ')
+                     ">-</button>
+
+                <button onclick="
+                      updateCalculation(7)
+                     ">7</button>
+
+                <button onclick="
+                    updateCalculation(8)
+                     ">8</button>
+
+                <button onclick="
+                       updateCalculation(9)
+                     ">9</button>
+
+                <button onclick="
+                   updateCalculation(' * ')
+                     ">*</button>
+
+                <button onclick="
+                     updateCalculation(0)
+                        ">0</button>
+
+                <button onclick="
+                    updateCalculation('.')
+                    ">.</button>
+
+                <button onclick="
+                        updateCalculation('=')
+                    ">=</button>
+
+                <button onclick="
+                    updateCalculation(' / ')
+                    ">/</button>
+
+                <button onclick="
+                         calculation = '';
+                     showCalculation.innerHTML = `${calculation}`;
+                    localStorage.setItem('calculation', JSON.stringify(calculation));
+                        ">Clear</button>
+                <button onclick="updateCalculation('Backspace')">Back</button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script>
+        let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
+        let showCalculation = document.querySelector('.p-1');
+        showCalculation.innerHTML = `${calculation}`;
+
+        function updateCalculation(number) {
+            console.log(number);
+            console.log(calculation);
+
+
+            if (number === '=') {
+                calculation = eval(calculation);
+                console.log(calculation);
+            } else if (number === 'Backspace') {
+                calculation = calculation.slice(0, -1);
+            }
+
+            else {
+                calculation += `${number}`;
+                console.log(calculation);
+            }
+
+            showCalculation.innerHTML = `${calculation}`;
+            localStorage.setItem('calculation', JSON.stringify(calculation));
+        }
+
+        function cheakKey(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+
+                updateCalculation('=');
+            } else if (event.key === '1') {
+                updateCalculation(1)
+            }
+            else if (event.key === '2') {
+                updateCalculation(2)
+            }
+            else if (event.key === '3') {
+                updateCalculation(3)
+            }
+            else if (event.key === '4') {
+                updateCalculation(4)
+            }
+            else if (event.key === '5') {
+                updateCalculation(5)
+            }
+            else if (event.key === '6') {
+                updateCalculation(6)
+            }
+            else if (event.key === '7') {
+                updateCalculation(7)
+            }
+            else if (event.key === '8') {
+                updateCalculation(8)
+            }
+            else if (event.key === '9') {
+                updateCalculation(9)
+            }
+            else if (event.key === '0') {
+                updateCalculation(0)
+            }
+            else if (event.key === '+') {
+                updateCalculation(' + ')
+            }
+            else if (event.key === '-') {
+                updateCalculation(' - ')
+            }
+            else if (event.key === '*') {
+                updateCalculation(' * ')
+            }
+            else if (event.key === '/') {
+                updateCalculation(' / ')
+            } else if (event.key === 'Backspace') {
+                updateCalculation('Backspace')
+            }
+        }
+    </script>
+</body>
+
+</html>
