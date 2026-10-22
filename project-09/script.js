@@ -29,7 +29,7 @@ function Submit() {
 
     setInterval(() => {
         document.querySelector(".container").remove();
-    }, 2000)
+    }, 5000)
 
 }
 
