@@ -1,11 +1,10 @@
-import { playAndPauseSong, formatTime, songPlay, randerSong, toggleShuffle, toggleLoop } from "./script/functions.js";
+import { playAndPauseSong, songPlay, randerSong, toggleShuffle, toggleLoop } from "./script/functions.js";
 import { songs } from "./script/song.js";
 
 
 const themeBtn = document.querySelector(".theme-toggle");
 const icon = themeBtn.querySelector("i");
 let currentSong = null;
-let currentPlayBtn = null;
 let activeSong = null;
 let songID = null;
 const audioContainer = document.querySelector(".Audio-Container");
@@ -27,7 +26,16 @@ themeBtn.addEventListener("click", () => {
 
 });
 
+
+
 document.body.addEventListener("keydown", (event) => {
+   
+    if (
+        event.target.matches("input, textarea, select") ||
+        event.target.isContentEditable
+    ) {
+        return;
+    }
 
     if (!currentSong) return;
 
@@ -37,14 +45,14 @@ document.body.addEventListener("keydown", (event) => {
     }
 
     if (event.code === "ArrowRight") {
-        document.querySelector(".nextBtn").click();
+        document.querySelector(".nextBtn")?.click();
     }
 
     if (event.code === "ArrowLeft") {
-        document.querySelector(".previousBtn").click();
+        document.querySelector(".previousBtn")?.click();
     }
-
 });
+
 
 
 
@@ -60,6 +68,7 @@ songs.forEach((song) => {
                 </div>
             `
 })
+
 document.querySelector('.song-list').innerHTML = html;
 
 let songbtn = document.querySelectorAll('.song-item')
@@ -80,12 +89,18 @@ function playSong(songID) {
     const button = document.querySelector(
         `[data-song-id="${songID}"]`
     );
-    if (activeSong) {
-        activeSong.classList.remove("active-song");
-    }
 
-    activeSong = button;
+
+    document.querySelectorAll(".song-item").forEach(item => {
+    item.classList.remove("active-song");
+});
+
+activeSong = button;
+
+if (activeSong) {
     activeSong.classList.add("active-song");
+}
+
 
     document.querySelector(".Audio-Container").innerHTML = songPlay(songID);
     currentSong = document.querySelector(".audio");
@@ -192,7 +207,7 @@ fullLoop.addEventListener("click", () => {
 const searchInput = document.querySelector(".searchInput");
 const songList = document.querySelector(".song-list");
 
-// Search songs by name or artist
+
 searchInput.addEventListener("input", () => {
 
     const searchValue = searchInput.value
@@ -231,7 +246,6 @@ searchInput.addEventListener("input", () => {
         `;
     });
 
-    // Add click events to filtered songs
     document.querySelectorAll(".song-item").forEach((button) => {
         button.addEventListener("click", () => {
             songID = Number(button.dataset.songId);
@@ -240,8 +254,4 @@ searchInput.addEventListener("input", () => {
     });
 
 });
-
-
-
-
 

@@ -116,7 +116,6 @@ export function randerSong(activeSong, songid, onSongEnd) {
     const durations = document.querySelectorAll(".duration");
     const nextSong = document.querySelectorAll('.nextBtn');
     const previousBtn = document.querySelectorAll(".previousBtn")
-    const fullPlayer = document.querySelector(".full-player");
 
     const fullPlay = document.querySelector(".full-play");
     const fullNext = document.querySelector(".full-next");
@@ -330,11 +329,19 @@ export function randerSong(activeSong, songid, onSongEnd) {
     });
 
     function AutoSuffle() {
-        let randomID = Math.floor(Math.random() * songs.length) + 1;
-        if (randomID === songid) {
-            randomID = Math.floor(Math.random() * songs.length) + 1;
-        }
-        return randomID
+     const otherSongs = songs.filter(
+            song => song.songId !== songid
+     );
+
+     if (otherSongs.length === 0) {
+            return songid;
+     }
+
+        const randomIndex = Math.floor(
+          Math.random() * otherSongs.length
+        );
+
+        return otherSongs[randomIndex].songId;
     }
 }
 
