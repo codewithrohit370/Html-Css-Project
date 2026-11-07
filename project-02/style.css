@@ -10,7 +10,7 @@ body {
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
 }
 
 .card {
@@ -40,11 +40,11 @@ body {
 .info {
     margin-top: -121px;
     background-color: rgba(255, 255, 255, 0.2);
-     backdrop-filter: blur(10px);
-     border-end-end-radius: 20px;
-     border-end-start-radius: 20px;
-     padding-left:12px;
-     padding-bottom: 7px;
+    backdrop-filter: blur(10px);
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
+    padding-left: 12px;
+    padding-bottom: 7px;
 }
 
 .heading {
