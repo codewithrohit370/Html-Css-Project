@@ -33,3 +33,13 @@ inputs.forEach((input, index) => {
     });
 
 });
+
+let array = [1 ,2 , 3, 5 ,6 ]
+
+array.forEach((num)=>{
+    console.log(num)
+})
+
+
+
+console.log(typeof NaN)  
